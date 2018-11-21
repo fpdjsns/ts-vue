@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "./built/",
+        "sourceMap": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "target": "es5",
+        "experimentalDecorators": true,
+        "charset": "utf8", // 입력파일의 문자집합 형식
+    "emitBOM": true,
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
