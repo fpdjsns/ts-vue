@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Index from "./components/Index";
 import {store} from './store';
+import {router} from './routes'
 let v = new Vue({
     el: "#app",
     template: `
@@ -10,5 +11,6 @@ let v = new Vue({
     components: {
         Index
     },
-    store
+    store,
+    router
 });
