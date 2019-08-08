@@ -1,16 +1,18 @@
 import Vue from "vue";
 import Index from "./components/Index";
-import {store} from './store';
-import {router} from './routes'
+import { store } from "./store";
+import { router } from "./routes";
 let v = new Vue({
-    el: "#app",
-    template: `
+  el: "#app",
+  template: `
     <div>
     <Index/>
     </div>`,
-    components: {
-        Index
-    },
-    store,
-    router
+  components: {
+    Index
+  },
+  store,
+  router
 });
+
+(<any>window).app = v;
