@@ -7,7 +7,10 @@ export default class Popup extends Vue {
   private name: string = "";
 
   private mounted() {
-    this.name = this.$route.params.name;
+    const name = this.$route.query.name;
+    if (typeof name === "string") {
+      this.name = name;
+    }
   }
 
   private sendData() {
