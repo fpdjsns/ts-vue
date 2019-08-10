@@ -1,41 +1,37 @@
-import { Vue, Component } from "vue-property-decorator";
-import { mapState } from 'vuex'
-import { ProductInfo } from "../../store/modules/product";
-import {State, Getter} from 'vuex-class';
-
-const namespace: string = 'product';
+import { Vue, Component } from 'vue-property-decorator';
+import { ProductInfo } from '../../store/modules/product';
+import { State, Getter } from 'vuex-class';
 
 @Component({
-    template: require('./Product.html'),
-    // computed: mapState('product', ['pageName', 'product'])
+  template: require('./Product.html')
+  // computed: mapState('product', ['pageName', 'product'])
 })
 export default class Product extends Vue {
+  @State
+  private constants!: object;
 
-    @State
-    constants!: object;
+  @State('pageName', { namespace: 'product' })
+  private pageName!: string;
 
-    @State(state => state.product.pageName)
-    pageName!: string;
+  // @State('product',{namespace})
+  // product!: ProductInfo;
 
-    // @State('product',{namespace})
-    // product!: ProductInfo;
+  @State('product', { namespace: 'product' })
+  private product!: ProductInfo;
 
-    @State('product',{namespace: 'product'})
-    product!: ProductInfo;
+  @Getter('productRegisterYear', { namespace: 'product' })
+  private productRegisterYear!: () => string;
 
-    @Getter('productRegisterYear', {namespace: 'product'})
-    productRegisterYear!: () => string;
+  private registerYear: string = '';
 
-    registerYear: string = '';
+  private mounted(): void {
+    // state
+    console.log(this.pageName);
+    console.log(this.product);
+    console.log(this.constants);
 
-    private mounted() {
-        // state
-        console.log(this.pageName);
-        console.log(this.product);
-        console.log(this.constants);
-
-        // getter
-        console.log(this.productRegisterYear());
-        this.registerYear = this.productRegisterYear();
-    }
+    // getter
+    console.log(this.productRegisterYear());
+    this.registerYear = this.productRegisterYear();
+  }
 }

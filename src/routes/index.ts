@@ -1,49 +1,48 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 // modules
-import Index from "../components/Index";
-import Test1 from "../components/Test1";
-import Product from "../components/Product";
-import Divide from "../components/Divide";
-import NotFound from "../components/NotFound";
-import Popup from "../components/Popup";
+import Test1 from '../components/Test1';
+import Product from '../components/Product';
+import Divide from '../components/Divide';
+import NotFound from '../components/NotFound';
+import Popup from '../components/Popup';
 
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   routes: [
     {
-      path: "/",
+      path: '/',
       component: Test1
     },
     {
-      path: "/product",
+      path: '/product',
       component: Product
     },
     {
-      path: "/test",
+      path: '/test',
       component: Test1
     },
     {
-      path: "/popup",
+      path: '/popup',
       component: Popup,
-      name: "popup"
+      name: 'popup'
     },
     {
-      path: "/divide",
+      path: '/divide',
       component: Divide,
       children: [
         {
-          path: "test", // /divide/test
+          path: 'test', // /divide/test
           components: {
             default: Test1,
             content: Product
           }
         },
         {
-          path: "product", // /divide/product
+          path: 'product', // /divide/product
           components: {
             default: Product,
             content: Test1
@@ -52,12 +51,12 @@ export const router = new VueRouter({
       ]
     },
     {
-      path: "/404",
+      path: '/404',
       component: NotFound
     },
     {
-      path: "*",
-      redirect: "/404"
+      path: '*',
+      redirect: '/404'
     }
   ]
 });

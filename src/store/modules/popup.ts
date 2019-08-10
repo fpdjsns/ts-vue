@@ -1,4 +1,3 @@
-import { GetterTree } from "vuex";
 
 export const namespaced = true;
 
@@ -7,7 +6,7 @@ interface State {
 }
 
 export const state: State = {
-  name: "default name"
+  name: 'default name'
 };
 
 export const mutations = {

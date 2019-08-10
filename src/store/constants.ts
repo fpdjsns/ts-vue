@@ -1,4 +1,4 @@
 export default Object.freeze({
-    COUNTRY: "KOREA",
-    NAME: "WITHHAM"
-})
+  COUNTRY: 'KOREA',
+  NAME: 'WITHHAM'
+});

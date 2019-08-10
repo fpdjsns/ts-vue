@@ -1,7 +1,6 @@
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component } from 'vue-property-decorator';
 
 @Component({
-    template: require('./Divide.html')
+  template: require('./Divide.html')
 })
-export default class Divide extends Vue {
-}
+export default class Divide extends Vue {}
