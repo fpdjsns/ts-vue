@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
 const HtmlWebpackPlugin = require("vue-html-webpack-plugin");
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 module.exports = {
   mode: "development",
@@ -71,7 +72,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       vue: true
-    })
+    }),
+    new CaseSensitivePathsPlugin()
   ]
 };
 
