@@ -8,6 +8,8 @@ import Divide from '../components/Divide';
 import NotFound from '../components/NotFound';
 import Popup from '../components/Popup';
 
+import Parent from '../components/Parent.vue';
+
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
@@ -29,6 +31,10 @@ export const router = new VueRouter({
       path: '/popup',
       component: Popup,
       name: 'popup'
+    },
+    {
+      path: '/parent',
+      component: Parent
     },
     {
       path: '/divide',
