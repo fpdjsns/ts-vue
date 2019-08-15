@@ -9,6 +9,7 @@ import NotFound from '../components/NotFound';
 import Popup from '../components/Popup';
 
 import Parent from '../components/Parent.vue';
+import Reqres from '../components/Reqres.vue';
 
 Vue.use(VueRouter);
 
@@ -35,6 +36,10 @@ export const router = new VueRouter({
     {
       path: '/parent',
       component: Parent
+    },
+    {
+      path: '/api',
+      component: Reqres
     },
     {
       path: '/divide',

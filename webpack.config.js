@@ -12,6 +12,12 @@ module.exports = {
     publicPath: "/",
     filename: "build.js"
   },
+  resolve: {
+    extensions: ['.ts', '.vue', '.html'],
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
+  },
   module: {
     rules: [
       {

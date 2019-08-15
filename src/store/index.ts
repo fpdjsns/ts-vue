@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import constants from './constants';
 import * as product from './modules/product';
 import * as popup from './modules/popup';
+import * as reqres from './modules/reqres';
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
@@ -11,7 +12,8 @@ export const store = new Vuex.Store({
   },
   modules: {
     product,
-    popup
+    popup,
+    reqres
   },
   getters: {
     CONSTANTS: state => {
